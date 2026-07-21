@@ -32,9 +32,14 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .bg-blur-emerald { background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, rgba(0,0,0,0) 70%); }
         .bg-blur-blue { background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, rgba(0,0,0,0) 70%); }
+        .bg-blur-crimson { background: radial-gradient(circle, rgba(225, 29, 72, 0.12) 0%, rgba(0,0,0,0) 70%); }
+        
+        /* Smooth Accordion Animation Marker Reset */
+        details summary::-webkit-details-marker { display: none; }
+        details[open] summary svg { transform: rotate(180deg); }
     </style>
 </head>
-<body class="bg-[#060913] text-slate-200 antialiased selection:bg-emerald-500 selection:text-slate-950">
+<body class="bg-[#060913] text-slate-200 antialiased selection:bg-emerald-500 selection:text-slate-950 pb-20">
 
     <!-- Ambient Gradients -->
     <div class="absolute top-0 left-0 w-full h-[800px] bg-blur-emerald pointer-events-none z-0"></div>
@@ -52,7 +57,23 @@
     </header>
 
     <!-- Hero / Headline Section -->
-    <section class="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-12 text-center">
+    <section class="relative z-10 max-w-5xl mx-auto px-6 pt-12 pb-12 text-center">
+        
+        <!-- IDEA A & B: SCARCITY & URGENCY BADGES -->
+        <div class="inline-flex flex-col sm:flex-row items-center gap-3 bg-slate-900/90 border border-rose-500/30 px-4 py-2 rounded-2xl mb-8 backdrop-blur-md">
+            <!-- Idea A: Capacity Scarcity -->
+            <div class="flex items-center space-x-2">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-rose-500"></span>
+                </span>
+                <span class="text-xs font-bold uppercase tracking-wider text-rose-400">Capacity Cap: 🔴 [ 3 / 5 ] Slots Claimed</span>
+            </div>
+            <span class="hidden sm:inline text-slate-700">|</span>
+            <!-- Idea B: Ad Budget Bleed Urgency -->
+            <span class="text-xs text-slate-300 font-medium">⚡ Every night you delay costs ~30% of your Meta ad spend in dropped leads.</span>
+        </div>
+
         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-white mb-6">
             Waking Up to <span class="text-rose-500">99+ Unread Messages</span> <br class="hidden md:inline">
             <span class="text-white">Isn't a Sign of Growth.</span>
@@ -529,7 +550,7 @@
                         <ul class="text-xs text-slate-300 space-y-1.5">
                             <li><strong>3 Months (10% Off):</strong> N675,000 total <span class="text-slate-500">(N225,000/mo)</span></li>
                             <li><strong>6 Months (20% Off):</strong> N1,200,000 total <span class="text-slate-500">(N200,000/mo)</span></li>
-                            <li class="text-emerald-400"><strong>12 Months (30% Off):</strong> N2,100,000 total <span class="text-slate-500">(N175,000/mo) [PRICE LOCK FOREVER]</span></li>
+                            <li class="text-emerald-400"><strong>12 Months (30% Off):</strong> N840,000 total <span class="text-slate-500">(N175,000/mo) [PRICE LOCK FOREVER]</span></li>
                         </ul>
                     </div>
                 </div>
@@ -539,6 +560,72 @@
                     Claim Pro Engine Tier
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- NEW ACCORDION FAQ SECTION (Compact Dropdown Box) -->
+    <section class="relative z-10 max-w-4xl mx-auto px-6 mb-24">
+        <div class="text-center mb-10">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 block mb-2">Got Questions?</span>
+            <h3 class="text-2xl md:text-4xl font-extrabold text-white tracking-tight">Frequently Asked Questions</h3>
+            <p class="text-slate-400 text-sm mt-1">Everything you need to know about our DFY Cloud Engine deployment.</p>
+        </div>
+
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <details class="group bg-slate-900/60 border border-slate-800 rounded-xl transition-all duration-200 overflow-hidden">
+                <summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-slate-200 hover:text-emerald-400 transition-colors">
+                    <span>Will using this automation get my WhatsApp number banned?</span>
+                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                    No. Unlike risky unofficial spam bots or mass messaging apps, DeltaFlow operates on official Cloud API endpoints with human-like response delay spacing and opt-out compliance (<code class="text-rose-400">STOP</code> triggers). Your line remains completely safe.
+                </div>
+            </details>
+
+            <!-- FAQ Item 2 -->
+            <details class="group bg-slate-900/60 border border-slate-800 rounded-xl transition-all duration-200 overflow-hidden">
+                <summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-slate-200 hover:text-emerald-400 transition-colors">
+                    <span>Do I need to leave my phone connected to Wi-Fi or turned on 24/7?</span>
+                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                    Not at all. Your engine is hosted on a dedicated 24/7 cloud server instance. Even if your phone battery dies or loses internet, your WhatsApp auto-responses, catalog delivery, and order logging continue running seamlessly.
+                </div>
+            </details>
+
+            <!-- FAQ Item 3 -->
+            <details class="group bg-slate-900/60 border border-slate-800 rounded-xl transition-all duration-200 overflow-hidden">
+                <summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-slate-200 hover:text-emerald-400 transition-colors">
+                    <span>How long does it take from payment to full live launch?</span>
+                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                    Between 48 to 72 hours max. Once you complete the brief Onboarding Intake Form and join a quick 5-minute QR pairing session, our engineering team handles 100% of the build, workflow testing, and QA deployment.
+                </div>
+            </details>
+
+            <!-- FAQ Item 4 -->
+            <details class="group bg-slate-900/60 border border-slate-800 rounded-xl transition-all duration-200 overflow-hidden">
+                <summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-slate-200 hover:text-emerald-400 transition-colors">
+                    <span>What happens if I’m not satisfied with the system?</span>
+                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                    You are fully protected by our 14-Day Risk-Free Guarantee Policy. If the Cloud Engine doesn't dramatically speed up your sales workflow within 14 days of activation, we wipe the script and issue a 100% full refund of your initial deposit.
+                </div>
+            </details>
+
+            <!-- FAQ Item 5 -->
+            <details class="group bg-slate-900/60 border border-slate-800 rounded-xl transition-all duration-200 overflow-hidden">
+                <summary class="flex justify-between items-center p-5 cursor-pointer font-bold text-slate-200 hover:text-emerald-400 transition-colors">
+                    <span>Does this replace my human sales/support staff?</span>
+                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-slate-800/50 pt-3">
+                    No, it supercharges them. The engine handles 80% of repetitive, low-value chats (sending price lists, bank details, delivery rates, and catalog links) so your human team can focus exclusively on closing high-value custom inquiries.
+                </div>
+            </details>
         </div>
     </section>
 
@@ -555,8 +642,24 @@
         </a>
     </section>
 
+    <!-- STRATEGY 3: STICKY FLOATING BOTTOM CALL-TO-ACTION BANNER -->
+    <div class="fixed bottom-0 left-0 w-full bg-slate-950/95 border-t border-emerald-500/40 p-4 z-50 backdrop-blur-md shadow-2xl">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="text-center sm:text-left">
+                <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center justify-center sm:justify-start gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    🟢 READY TO AUTOMATE YOUR META AD TRAFFIC?
+                </div>
+                <div class="text-xs text-slate-300 font-medium">Claim 1 of the 2 remaining onboarding slots for this month before ad costs rise further.</div>
+            </div>
+            <a href="https://wa.me/2349071283949?text=I%20want%20to%20claim%201%20of%20the%20remaining%202%20onboarding%20slots%20for%20the%20DeltaFlow%20Engine" target="_blank" class="w-full sm:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-lg shadow-emerald-500/30 transition-all duration-200 transform hover:-translate-y-0.5 text-center shrink-0">
+                🔥 CLAIM YOUR 14-DAY RISK-FREE ENGINE BUILD →
+            </a>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="max-w-7xl mx-auto px-6 py-12 text-center text-xs text-slate-600 border-t border-slate-900">
+    <footer class="max-w-7xl mx-auto px-6 py-12 text-center text-xs text-slate-600 border-t border-slate-900 mb-12">
         <p>&copy; 2026 DeltaFlow Tech Architecture. All rights reserved. Inflation-proof operations active.</p>
     </footer>
 
